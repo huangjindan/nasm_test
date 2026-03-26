@@ -650,6 +650,11 @@ static void free_smacro_table(struct hash_table *smt)
     hash_free(smt);
 }
 
+static void free_smacro_table_new(struct hash_table *smt)
+{
+    hash_free(smt);
+}
+
 static void free_mmacro_table(struct hash_table *mmt)
 {
     MMacro *m, *tmp;
@@ -688,7 +693,7 @@ static void ctx_pop(void)
     Context *c = cstk;
 
     cstk = cstk->next;
-    free_smacro_table(&c->localmac);
+    free_smacro_table_new(&c->localmac);
     nasm_free(c->name);
     nasm_free(c);
 }
