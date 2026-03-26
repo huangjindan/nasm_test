@@ -2176,8 +2176,8 @@ static enum match_result matches(const struct itemplate *itemp,
     /*
      * Check the opcode
      */
-    if (itemp->opcode != instruction->opcode)
-        return MERR_INVALOP;
+    // if (itemp->opcode != instruction->opcode)
+    //    return MERR_INVALOP;
 
     /*
      * Count the operands
