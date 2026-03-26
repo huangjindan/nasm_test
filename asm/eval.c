@@ -86,6 +86,13 @@ void eval_cleanup(void)
     nasm_free(tempexprs);
 }
 
+
+void eval_cleanup_new(void)
+{
+    //only clean up current byte
+    nasm_free(tempexprs);
+}
+
 /*
  * Construct a temporary expression.
  */
