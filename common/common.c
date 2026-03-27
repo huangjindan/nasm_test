@@ -40,6 +40,13 @@
 #include "nasmlib.h"
 #include "insns.h"
 
+int my_common_func(int in){
+	if(in >= 10){
+		return 1;
+	}
+	return 0;
+}
+
 /*
  * The current bit size of the CPU
  */
