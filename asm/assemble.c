@@ -448,6 +448,10 @@ static inline void cross_unit_calling(int val){
 	}
 }
 
+static inline void my_get_p(){
+	char* p = get_p();
+}
+
 static inline void out_rawdata(struct out_data *data, const void *rawdata,
                                size_t size)
 {
