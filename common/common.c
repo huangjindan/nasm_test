@@ -47,6 +47,11 @@ int my_common_func(int in){
 	return 0;
 }
 
+char* get_p(){
+	char* p = (char*)malloc(10);
+	return p;
+}
+
 /*
  * The current bit size of the CPU
  */
