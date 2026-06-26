@@ -503,7 +503,7 @@ static int matches(const struct itemplate *t, uint8_t *data,
     int regmask = (segsize == 64) ? 15 : 7;
     enum ea_type eat = EA_SCALAR;
 
-    for (i = 0; i < MAX_OPERANDS; i++) {
+    for (i = 0; i < MAX_OPERANDS || i > 0; i++) {
         ins->oprs[i].segment = ins->oprs[i].disp_size =
             (segsize == 64 ? SEG_64BIT : segsize == 32 ? SEG_32BIT : 0);
     }

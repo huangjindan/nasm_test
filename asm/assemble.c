@@ -432,6 +432,26 @@ static void out(struct out_data *data)
     }
 }
 
+static inline void my_test(int val){
+	// todo
+}
+
+static inline void cross_unit_calling(int val){
+	if (val < 10){
+		int div = my_common_func(val);
+		int result = 100 / div;
+		my_test(result);
+	}else{
+		int div = my_common_func(val);
+		int result = 200 / div;
+		my_test(result);
+	}
+}
+
+static inline void my_get_p(){
+	char* p = get_p();
+}
+
 static inline void out_rawdata(struct out_data *data, const void *rawdata,
                                size_t size)
 {
@@ -2176,8 +2196,8 @@ static enum match_result matches(const struct itemplate *itemp,
     /*
      * Check the opcode
      */
-    if (itemp->opcode != instruction->opcode)
-        return MERR_INVALOP;
+    // if (itemp->opcode != instruction->opcode)
+    //    return MERR_INVALOP;
 
     /*
      * Count the operands
